@@ -1,11 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function App() {
+  const [count, setCount] = useState(0)
+
+  function aumentar() {
+    setCount(count+1)
+  }
+
+  function diminuir() {
+    setCount(count-1)
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <View>
+        <Text style={styles.txtCont}>Contador de Pessoas</Text>
+      </View>
+      <View style={styles.boxVal}>
+        <Text style={styles.txtVal}>{count}</Text>
+      </View>
+      <View>
+        <TouchableOpacity style={styles.btn} onPress={aumentar}>
+          <Text style={styles.txtBtn}>+</Text>
+        </TouchableOpacity>
+      </View>
+      <View>
+        <TouchableOpacity style={styles.btn} onPress={diminuir}>
+          <Text style={styles.txtBtn}>-</Text>
+        </TouchableOpacity>
+      </View>
       <StatusBar style="auto" />
     </View>
   );
@@ -14,8 +39,42 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#636aba', 
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  txtCont: {
+    fontSize: 25,
+    color: '#fff',
+    fontWeight: 'bold',
+    margin: 25,
+    marginTop: -30,
+  },
+  boxVal: {
+    width: 180,
+    height: 100,
+    borderRadius: 15,
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    justifyContent: 'center',
+    margin: 25,
+  },
+  txtVal: {
+    fontSize: 30,
+    fontWeight: 'bold'
+  },
+  btn: {
+    width: 210,
+    height: 85,
+    borderRadius: 10,
+    backgroundColor: '#362861',
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 25,
+  },
+  txtBtn: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#fff',
   },
 });
