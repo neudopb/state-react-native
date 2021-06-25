@@ -10,7 +10,10 @@ export default function App() {
   }
 
   function diminuir() {
-    setCount(count-1)
+    if (count > 0) {
+      setCount(count-1)  
+    }
+    
   }
 
   return (
