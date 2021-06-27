@@ -1,17 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function App() {
   const [count, setCount] = useState(0)
 
   function aumentar() {
-    setCount(count+1)
+    setCount(count + 1)
   }
 
   function diminuir() {
     if (count > 0) {
-      setCount(count-1)  
+      setCount(count - 1)  
     }
     
   }
@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#636aba', 
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
   },
   txtCont: {
     fontSize: 25,
@@ -56,28 +56,28 @@ const styles = StyleSheet.create({
   boxVal: {
     width: 180,
     height: 100,
-    borderRadius: 15,
-    alignItems: 'center',
     backgroundColor: '#fff',
     justifyContent: 'center',
+    alignItems: 'center',
     margin: 25,
+    borderRadius: 15,
   },
   txtVal: {
     fontSize: 30,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   btn: {
     width: 210,
     height: 85,
-    borderRadius: 10,
     backgroundColor: '#362861',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
     margin: 25,
+    borderRadius: 10,
   },
   txtBtn: {
     fontSize: 30,
-    fontWeight: 'bold',
     color: '#fff',
+    fontWeight: 'bold',
   },
 });
